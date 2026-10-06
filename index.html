@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cherty Squad</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=UnifrakturCook:wght@700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="main.css">
+    <link rel="shortcut icon" href="img/sq.svg" type="image/x-icon">
+</head>
+<body>
+
+    <!-- Шапка -->
+    <header class="header">
+        <div class="header_container">
+            <nav class="header_nav">
+                <a href="#main" class="header_logo">
+                    <img src="img/sq.svg" alt="Cherty Squad">
+                </a>
+
+                <ul class="header_list">
+                    <li><a href="#main">Главная</a></li>
+                    <li><a href="#players">Игроки</a></li>
+                    <li><a href="#partners">Партнеры</a></li>
+                </ul>
+
+                <a href="https://t.me/CHERTYSQUAD" class="header_tg">
+                    <img src="img/tg.svg" alt="Telegram">
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero" id="main">
+        <img class="hero_title" src="img/sqbig.svg" alt="">
+        <img class="hero_characters" src="img/parny.svg" alt="Команда Cherty Squad">
+    </section>
+
+    <!-- Бегущая строка -->
+    <section class="marquee">
+        <div class="marquee_track">
+            <span>ЧЕРТИ СНОВА ЕБУТ</span>
+            <span>ЧЕРТИ СНОВА ЕБУТ</span>
+            <span>ЧЕРТИ СНОВА ЕБУТ</span>
+            <span>ЧЕРТИ СНОВА ЕБУТ</span>
+            <span>ЧЕРТИ СНОВА ЕБУТ</span>
+            <span>ЧЕРТИ СНОВА ЕБУТ</span>
+        </div>
+    </section>
+
+    <!-- Состав -->
+    <section class="roster" id="players">
+        <div class="roster_bg_text">CHERTY SQUAD</div>
+        <div class="roster_line roster_line_left"></div>
+        <div class="roster_line roster_line_right"></div>
+
+        <div class="roster_container">
+            <div class="roster_header">
+                <h2 class="roster_title">COCTAB</h2>
+                <img class="roster_game" src="img/dota.png" alt="Dota 2">
+            </div>
+
+            <div class="roster_grid">
+                <!-- Карточка 1 -->
+                <article class="player">
+                    <div class="player_top">
+                        <a href="https://steamcommunity.com/profiles/76561198793728266/" class="player_name" target="_blank" rel="noopener">KanekiPro</a>
+                        <a href="https://steamcommunity.com/profiles/76561198793728266/" class="player_social" target="_blank" rel="noopener">
+                            <img src="img/steam.svg" alt="steam">
+                        </a>
+                    </div>
+                    <img class="player_photo" src="img/mikk.svg" alt="KanekiPro">
+                </article>
+
+                <!-- Карточка 2 -->
+                <article class="player">
+                    <div class="player_top">
+                        <a href="https://steamcommunity.com/profiles/76561198763044182/" class="player_name" target="_blank" rel="noopener">SM3RTN1K</a>
+                        <a href="https://steamcommunity.com/profiles/76561198763044182/" class="player_social" target="_blank" rel="noopener">
+                            <img src="img/steam.svg" alt="steam">
+                        </a>
+                    </div>
+                    <img class="player_photo" src="img/dan.svg" alt="SM3RTN1K">
+                </article>
+
+                <!-- Карточка 3 -->
+                <article class="player">
+                    <div class="player_top">
+                        <a href="https://steamcommunity.com/profiles/76561199611082326/" class="player_name" target="_blank" rel="noopener">WeXoNaX</a>
+                        <a href="https://steamcommunity.com/profiles/76561199611082326/" class="player_social" target="_blank" rel="noopener">
+                            <img src="img/steam.svg" alt="steam">
+                        </a>
+                    </div>
+                    <img class="player_photo" src="img/art.svg" alt="WeXoNaX">
+                </article>
+
+                <!-- Карточка 4 -->
+                <article class="player">
+                    <div class="player_top">
+                        <a href="https://steamcommunity.com/profiles/76561199440179587/" class="player_name" target="_blank" rel="noopener">yoka.tu</a>
+                        <a href="https://steamcommunity.com/profiles/76561199440179587/" class="player_social" target="_blank" rel="noopener">
+                            <img src="img/steam.svg" alt="steam">
+                        </a>
+                    </div>
+                    <img class="player_photo" src="img/mks.svg" alt="yoka.tu">
+                </article>
+
+                <!-- Карточка 5 -->
+                <article class="player player_center">
+                    <div class="player_top">
+                        <a href="https://steamcommunity.com/id/awenplugg/" class="player_name" target="_blank" rel="noopener">paradox</a>
+                        <a href="https://steamcommunity.com/id/awenplugg/" class="player_social" target="_blank" rel="noopener">
+                            <img src="img/steam.svg" alt="steam">
+                        </a>
+                    </div>
+                    <img class="player_photo" src="img/van.svg" alt="paradox">
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер (Партнёры) -->
+    <footer class="partners" id="partners">
+        <div class="partners_container">
+            
+            <div class="partners_top">
+                <div class="partners_info">
+                    <div class="partners_logo_block">
+                        <img src="img/sqbig.svg" alt="Cherty Squad" class="partners_logo">
+                        <img src="gif.gif" alt="Partner" class="partners_small_img">
+                    </div>
+                    <p class="partners_desc">
+                        Киберспортивный состав по Dota 2, собравший вокруг себя опытных и талантливых игроков
+                    </p>
+                </div>
+
+                <div class="partners_socials">
+                    <a href="#" class="social_link" target="_blank" rel="noopener">
+                        <img src="img/twitch.svg" alt="Twitch">
+                    </a>
+                    <a href="https://rt.pornhub.org/" class="social_link" target="_blank" rel="noopener">
+                        <img src="img/VK.png" alt="VK">
+                    </a>
+                    <a href="https://t.me/CHERTYSQUAD" class="social_link" target="_blank" rel="noopener">
+                        <img src="img/tg.svg" alt="Telegram">
+                    </a>
+                </div>
+            </div>
+
+            <div class="partners_bottom">
+                <a href="https://t.me/+ZZ3ODHDDbT4yNjQy" class="partners_support">поддержка</a>
+                <div class="partners_age">18+</div>
+            </div>
+
+        </div>
+    </footer>
+    
+</body>
+</html>

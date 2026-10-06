@@ -1,0 +1,509 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #000;
+    color: #fff;
+}
+
+/* ===== Общие контейнеры ===== */
+.header_container,
+.roster_container,
+.partners_container {
+    max-width: 1250px;
+    margin-inline: auto;
+    padding-inline: 15px;
+}
+
+/* ===== Шапка ===== */
+.header {
+    padding-block: 30px;
+}
+
+.header_nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header_list {
+    display: flex;
+    list-style: none;
+    gap: 50px;
+    color: aliceblue;
+    margin-left: auto;
+    margin-right: 60px;
+}
+
+.header_list a {
+    text-decoration: none;
+    color: inherit;
+    font-size: 19px;
+    transition: opacity 0.2s;
+}
+
+.header_list a:hover {
+    opacity: 0.7;
+}
+
+/* ===== Hero ===== */
+.hero {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    overflow: hidden;
+    background-color: #000;
+}
+
+.hero_title {
+    position: absolute;
+    top: 1%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1100px;
+    height: auto;
+    z-index: 1;
+    pointer-events: none;
+    user-select: none;
+}
+
+.hero_characters {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1100px;
+    height: auto;
+    display: block;
+}
+
+/* ===== Бегущая строка ===== */
+.marquee {
+    width: 100%;
+    overflow: hidden;
+    background-color: #fff;
+    padding-block: 18px;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+}
+
+.marquee_track {
+    display: flex;
+    gap: 40px;
+    white-space: nowrap;
+    width: max-content;
+    animation: marquee 20s linear infinite;
+}
+
+.marquee_track span {
+    font-size: 42px;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #000;
+}
+
+@keyframes marquee {
+    from { transform: translateX(-50%); }
+    to   { transform: translateX(0); }
+}
+
+/* ===== Состав ===== */
+.roster {
+    background-color: #000;
+    padding-block: 60px;
+    position: relative;
+    overflow: hidden;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+}
+
+.roster_container {
+    position: relative;
+    z-index: 2;
+}
+
+.roster_bg_text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Alfa Slab One', sans-serif;
+    font-size: 15vw;
+    color: #0a0a0a;
+    white-space: nowrap;
+    z-index: 0;
+    pointer-events: none;
+    user-select: none;
+    letter-spacing: 10px;
+    opacity: 0.8;
+}
+
+.roster_line {
+    position: absolute;
+    top: 15%;
+    bottom: 15%;
+    width: 4px;
+    z-index: 1;
+    pointer-events: none;
+    border-radius: 2px;
+}
+
+.roster_line_left {
+    left: 8vw;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(255, 255, 255, 0.2) 15%,
+        #fff 40%,
+        #e23 60%,
+        rgba(238, 34, 51, 0.2) 85%,
+        transparent 100%
+    );
+    box-shadow: 
+        0 0 15px rgba(255, 255, 255, 0.3),
+        0 0 30px rgba(238, 34, 51, 0.2);
+}
+
+.roster_line_left::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    background: #e23;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #e23;
+}
+
+.roster_line_right {
+    right: 8vw;
+    background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(255, 255, 255, 0.2) 15%,
+        #fff 40%,
+        #e23 60%,
+        rgba(238, 34, 51, 0.2) 85%,
+        transparent 100%
+    );
+    box-shadow: 
+        0 0 15px rgba(255, 255, 255, 0.3),
+        0 0 30px rgba(238, 34, 51, 0.2);
+}
+
+.roster_line_right::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    background: #e23;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 15px #e23;
+}
+
+.roster_header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 2;
+}
+
+.roster_title {
+    font-family: 'Alfa Slab One', sans-serif;
+    color: #fff;
+    font-size: clamp(40px, 6vw, 72px);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    line-height: 1;
+}
+
+.roster_game {
+    width: 60px;
+    height: auto;
+    filter: drop-shadow(0 0 10px #e23);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.roster_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 700px;
+    margin-inline: auto;
+    justify-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+.player {
+    width: 100%;
+    max-width: 320px;
+    background-color: #000;
+    border: 1px solid #333;
+    border-radius: 4px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.player:hover {
+    border-color: #e23;
+    transform: translateY(-4px);
+    box-shadow: 0 0 20px rgba(238, 34, 51, 0.3);
+}
+
+.player_top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.player_name {
+    font-family: 'Alfa Slab One', sans-serif;
+    color: #fff;
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.player_name:hover {
+    color: #e23;
+}
+
+.player_social img {
+    width: 22px;
+    height: auto;
+    display: block;
+    transition: opacity 0.2s;
+}
+
+.player_social:hover img {
+    opacity: 0.7;
+}
+
+.player_photo {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 2px;
+}
+
+.player::after {
+    content: "";
+    display: block;
+    height: 2px;
+    margin-top: 6px;
+    background: linear-gradient(
+        to right,
+        #fff 0%,
+        #fff 45%,
+        #e23 45%,
+        #e23 55%,
+        #fff 55%,
+        #fff 100%
+    );
+}
+
+.player_center {
+    grid-column: 1 / -1;
+    max-width: 320px;
+    justify-self: center;
+}
+
+/* ===== Партнёры (Футер) ===== */
+.partners {
+    background-color: #000;
+    padding-block: 60px 40px;
+    border-top: 1px solid #222;
+    position: relative;
+    z-index: 2;
+}
+
+.partners_top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.partners_info {
+    max-width: 350px;
+}
+
+.partners_logo_block {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.partners_logo {
+    height: 45px;
+    width: auto;
+    display: block;
+}
+
+.partners_small_img {
+    height: 45px;
+    width: 45px;
+    object-fit: cover;
+    border-radius: 4px;
+    border: 1px solid #333;
+}
+
+.partners_desc {
+    color: #aaa;
+    font-size: 13px;
+    line-height: 1.5;
+    font-family: sans-serif;
+    max-width: 300px;
+}
+
+.partners_socials {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.social_link img {
+    width: 30px;
+    height: auto;
+    display: block;
+    opacity: 0.9;
+    transition: opacity 0.2s, transform 0.2s;
+    filter: invert(1);
+}
+
+.social_link:hover img {
+    opacity: 1;
+    transform: translateY(-3px);
+}
+
+.partners_bottom {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #1a1a1a;
+}
+
+.partners_support {
+    color: #888;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: color 0.2s;
+    text-transform: lowercase;
+}
+
+.partners_support:hover {
+    color: #fff;
+}
+
+.partners_age {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: #333;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 6px;
+    font-family: 'Alfa Slab One', sans-serif;
+    border: 1px solid #444;
+}
+
+/* ===== Адаптив ===== */
+@media (max-width: 1200px) {
+    .roster_line_left { left: 4vw; }
+    .roster_line_right { right: 4vw; }
+}
+
+@media (max-width: 900px) {
+    .roster_line { display: none; }
+}
+
+@media (max-width: 768px) {
+    .partners_top {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .partners_info {
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .partners_logo_block {
+        justify-content: center;
+    }
+
+    .partners_desc {
+        max-width: 100%;
+    }
+
+    .partners_bottom {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .roster_grid {
+        grid-template-columns: 1fr;
+    }
+
+    .player_center {
+        grid-column: auto;
+    }
+
+    .marquee_track span {
+        font-size: 28px;
+    }
+
+    .header_list {
+        gap: 25px;
+        margin-right: 20px;
+    }
+
+    .roster_bg_text {
+        font-size: 20vw;
+        opacity: 0.5;
+    }
+}
