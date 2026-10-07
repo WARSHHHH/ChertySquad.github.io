@@ -260,11 +260,11 @@ body {
     z-index: 2;
 }
 
+/* Карточка */
 .player {
     width: 100%;
     max-width: 320px;
     background-color: #000;
-    border: 1px solid #333;
     border-radius: 4px;
     padding: 12px;
     display: flex;
@@ -283,6 +283,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 10px;
 }
 
 .player_name {
@@ -292,14 +293,34 @@ body {
     letter-spacing: 1px;
     text-decoration: none;
     transition: color 0.2s;
+    white-space: nowrap;
 }
 
 .player_name:hover {
     color: #e23;
 }
 
+.player_icons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.player_role_icon {
+    width: 28px;
+    height: 28px;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+    filter: invert(0.8);
+}
+
+.player_role_icon:hover {
+    opacity: 1;
+}
+
 .player_social img {
-    width: 22px;
+    width: 20px;
     height: auto;
     display: block;
     transition: opacity 0.2s;
@@ -314,22 +335,6 @@ body {
     height: auto;
     display: block;
     border-radius: 2px;
-}
-
-.player::after {
-    content: "";
-    display: block;
-    height: 2px;
-    margin-top: 6px;
-    background: linear-gradient(
-        to right,
-        #fff 0%,
-        #fff 45%,
-        #e23 45%,
-        #e23 55%,
-        #fff 55%,
-        #fff 100%
-    );
 }
 
 .player_center {
@@ -382,7 +387,7 @@ body {
 }
 
 .partners_desc {
-    color: #aaa;
+    color: #fff;
     font-size: 13px;
     line-height: 1.5;
     font-family: sans-serif;
@@ -396,12 +401,15 @@ body {
 }
 
 .social_link img {
-    width: 30px;
-    height: auto;
-    display: block;
-    opacity: 0.9;
-    transition: opacity 0.2s, transform 0.2s;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: contain;
+    background-color: #fff;
+    padding: 4px;
+    box-sizing: border-box;
     filter: invert(1);
+    transition: opacity 0.2s, transform 0.2s;
 }
 
 .social_link:hover img {
@@ -440,24 +448,43 @@ body {
     height: 40px;
     background-color: #333;
     color: #fff;
-    font-size: 15px;
-    font-weight: bold;
+    font-size: 18px;
+    font-weight: 400;
     border-radius: 6px;
-    font-family: 'Alfa Slab One', sans-serif;
+    font-family: sans-serif;
     border: 1px solid #444;
 }
 
 /* ===== Адаптив ===== */
+
+/* Планшеты и небольшие ноутбуки */
 @media (max-width: 1200px) {
     .roster_line_left { left: 4vw; }
     .roster_line_right { right: 4vw; }
 }
 
+/* Скрываем декоративные линии на планшетах */
 @media (max-width: 900px) {
     .roster_line { display: none; }
 }
 
+/* Мобильные устройства (от 768px и меньше) */
 @media (max-width: 768px) {
+    /* Шапка */
+    .header {
+        padding-block: 15px;
+    }
+    
+    .header_list {
+        gap: 15px;
+        margin-right: 15px;
+    }
+    
+    .header_list a {
+        font-size: 16px;
+    }
+
+    /* Футер */
     .partners_top {
         flex-direction: column;
         align-items: center;
@@ -479,31 +506,63 @@ body {
         max-width: 100%;
     }
 
+    .partners_socials {
+        gap: 15px;
+    }
+
     .partners_bottom {
         justify-content: center;
     }
 }
 
+/* Очень маленькие экраны (от 600px и меньше) */
 @media (max-width: 600px) {
+    /* Сетка карточек в одну колонку */
     .roster_grid {
         grid-template-columns: 1fr;
+        gap: 30px;
     }
 
     .player_center {
         grid-column: auto;
     }
 
+    /* Уменьшаем шрифты */
     .marquee_track span {
         font-size: 28px;
     }
 
-    .header_list {
-        gap: 25px;
-        margin-right: 20px;
+    .roster_title {
+        font-size: 32px;
+    }
+
+    .roster_game {
+        width: 40px;
     }
 
     .roster_bg_text {
         font-size: 20vw;
         opacity: 0.5;
+    }
+
+    /* Уменьшаем иконки соцсетей в футере */
+    .social_link img {
+        width: 40px;
+        height: 40px;
+        padding: 2px;
+    }
+
+    /* Уменьшаем отступы у футера */
+    .partners {
+        padding-block: 40px 20px;
+    }
+
+    .partners_top {
+        margin-bottom: 30px;
+    }
+
+    /* Делаем карточки игроков чуть шире, чтобы занять всю ширину */
+    .player {
+        max-width: 100%;
     }
 }
